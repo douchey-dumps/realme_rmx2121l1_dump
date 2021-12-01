@@ -1,0 +1,7 @@
+#
+#   MMS Binder service
+#
+service mmserver /system/bin/mmserver
+    class main
+    user system
+    group system graphics

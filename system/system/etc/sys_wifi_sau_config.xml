@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wifiSauEntityConfig>
+    <!-- WIFI FW: wifi.fw.soc3 -->
+    <Entity platform="mtk" type="wifi.fw.soc3" versionFileName="WIFI_RAM_CODE_soc3_0_1_1.bin" fileNameList="WIFI_RAM_CODE_soc3_0_1_1.bin;soc3_0_ram_wifi_1_1_hdr.bin;soc3_0_ram_wmmcu_1_1_hdr.bin;soc3_0_patch_wmmcu_1_1_hdr.bin"/>
+    <!-- WIFI FW: wifi.cfg -->
+    <Entity platform="mtk" type="wifi.cfg" versionFileName="wifi.cfg" fileNameList="wifi.cfg"/>
+</wifiSauEntityConfig>

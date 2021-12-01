@@ -1,0 +1,47 @@
+<!-- This file is auto-generated.  DO NOT MODIFY. -->
+<permissions>
+    <!-- Yaqun.Li@ROM.Framework, 2019/10/24, add for OneHandModel -->
+    <feature name="oppo.screen.hovering.support" />
+    <!-- KaiFa.Zeng@ROM.Framework, 2019/10/19, add for OppoAlarmExactChange -->
+    <feature name="oppo.inexact.alarm" />
+    <!-- KaiFa.Zeng@ROM.Framework, 2019/10/19, add for OppoGuardElf -->
+    <feature name="oppo.guard.elf.support" />
+    <!-- GuoDong.Huang@plf.Framework, 2016/07/28, add for OppoAlarmAlignment -->
+    <feature name="oppo.Align.alarm.support"  />
+
+    <feature name="oppo.filtrated.app" />
+    <!-- chaochun.Shuai@ROM.Framework, 2016/02/17, add for oppo security pay -->
+    <feature name="oppo.securitypay.support" />
+     <!-- Bin.Wang@ROM.Framework, 2018/03/20, add for appdisable -->
+    <feature name="oppo.appdisable.support" />
+    <!-- Xijun.Wang@ROM.SDK, 2019/01/01, add for start and back animation support-->
+    <feature name="oppo.animation.round.support"/>
+    <!-- Bin.Wang@ROM.Framework, 2017/01/02, add for schedule oppo jobs -->
+    <feature name="oppo.jobscheduler.support" />
+    <!-- jizhengkang@ROM.Framework, 2016/04/15, Add feature -->
+    <feature name="oppo.package.encrypt.support.only" />
+    <!-- jizhengkang@ROM.Plf, 2018/06/06, add support new oppo name-->
+    <feature name="oppo.system.use_new_oppo_name" />
+    <!-- Changwei.Li@SDK, 2016/03/29, Add for tp limit support -->
+    <feature name="oppo.tp.limit.support" />
+    <!-- Shirong.Ma@ROM.Framework, 2019/10/28, add for oppo multi app -->
+    <feature name="oppo.multiapp.support" />
+    <!-- Min.Wang@ROM.Framework, 2019/10/29, add for memory clean -->
+    <feature name="oppo.memory.auto.deep.clean" />
+    <feature name="oppo.memory.auto.clean" />
+    <!-- Bin.Wang@ROM.Framework, 2017/08/08, add for app protect oneself from clear, suspend or intercept-->
+    <feature name="oppo.selfprotect.support" />
+    <!-- Ke.Li@ROM, Security, 2018/06/04, add for hotfix support for framework -->
+    <feature name="oppo.hotfix.support" />
+    <!-- Jinizhi.Fu@ROM.Framework 2019/10/31, add for black gesture  -->
+    <feature name="oppo.black.gesture.proximitysensor.support" />
+    <!-- Xiaohu.Mei@ROM.Framework, 2019/10/31, add for safecenter settings security features collect -->
+    <feature name="oppo.security.collect.support" />
+    <!-- jizhengkang@ROM.Framework, 2019/10/31, Add feature -->
+    <feature name="oppo.disable.small.window.leather" />
+    <feature name="oppo.sw.solution.rom" />
+    <!-- Yalong.Wang@Apps.SpeechAssist 2019/11/06, feature used for disable incoming call voice control -->
+    <feature name="oppo.incomingcall.voicecontrol.shield" />
+    <!-- xuan.zhou@Apps, 2019/11/18, add for support wake up arouse  -->
+    <feature name="oppo.black.gesture.wake.up.arouse.support" />
+</permissions>
