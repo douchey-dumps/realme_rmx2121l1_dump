@@ -1,0 +1,132 @@
+#================================connectivity wifi related start========================================
+#ifdef VENDOR_EDIT
+#JiaoBo@PSW.CN.WiFi.Basic.Log.1162004, 2019/10/18
+#Add for: mtk coredump related log collection and DCS handle
+#dynamic open wifi core dump
+on property:oppo.wifi.dump.mode=*
+    setprop persist.vendor.connsys.wifi.dump.mode ${oppo.wifi.dump.mode}
+
+on property:vendor.connsys.wifi.dump.status=1
+    start collectWifiCoredumpLog
+
+#collectWifiCoredumpLog service start kernel log collect and zip file to DCS path
+service collectWifiCoredumpLog /vendor/bin/sh /vendor/bin/init.oppo.wifi.debug.sh "collectWifiCoredumpLog"
+    class main
+    user root
+    group root system misc wifi
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+#endif  /* VENDOR_EDIT */
+
+
+#ifdef VENDOR_EDIT
+#JiaoBo@PSW.CN.WiFi.Basic.Custom.2795386, 2020/02/20
+#add for: support auto update function, include mtk fw, mtk wifi.cfg, qcom fw, qcom bdf, qcom ini
+#create and copy to temp sau dir
+service sauWifiFileTransfer /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiFileTransfer
+    class main
+    user system
+    group root system misc wifi saures
+    disabled
+    oneshot
+
+#mtk bootup check
+on property:persist.vendor.mtk.wifi.sau.version.oper=mtk-bootcheck-done
+    start sauMtkWifiBootCheck
+
+service sauMtkWifiPreBootCheck /vendor/bin/vendor.wifi.autochmod.sh sauWifiVendorVerBootCheck "mtk"
+    user root
+    group root system misc wifi
+    class late_start
+    oneshot
+
+service sauMtkWifiBootCheck /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiBootCheck "mtk"
+    class main
+    user system
+    group root system misc wifi
+    oneshot
+
+#mtk single entity(objs) upgrade
+on property:persist.vendor.mtk.wifi.sau.version.oper=mtk-upgradeCheck-done
+    start sauMtkWifiObjsUpgrade
+
+service sauMtkWifiObjsPreUpgrade /vendor/bin/vendor.wifi.autochmod.sh sauWifiVendorVerUpgradeCheck "mtk"
+    class main
+    user root
+    group root misc wifi
+    disabled
+    oneshot
+
+service sauMtkWifiObjsUpgrade /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiObjsUpgrade "mtk"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+#mtk trigger fw assert effective
+service sauMtkWifiObjsTriggerFwAssert /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiObjsTriggerFwAssert "mtk"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+#qcom bootup check
+on property:persist.vendor.qcom.wifi.sau.version.oper=qcom-bootcheck-done
+    start sauQcomWifiBootCheck
+
+service sauQcomWifiPreBootCheck /vendor/bin/vendor.wifi.autochmod.sh sauWifiVendorVerBootCheck "qcom"
+    user root
+    group root system misc wifi
+    class late_start
+    oneshot
+
+service sauQcomWifiBootCheck /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiBootCheck "qcom"
+    class main
+    user system
+    group root system misc wifi
+    oneshot
+
+#qcom single entity(objs) upgrade
+on property:persist.vendor.qcom.wifi.sau.version.oper=qcom-upgradeCheck-done
+    start sauQcomWifiObjsUpgrade
+
+service sauQcomWifiObjsPreUpgrade /vendor/bin/vendor.wifi.autochmod.sh sauWifiVendorVerUpgradeCheck "qcom"
+    class main
+    user root
+    group root misc wifi
+    disabled
+    oneshot
+
+service sauQcomWifiObjsUpgrade /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiObjsUpgrade "qcom"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+
+#qcom trigger fw assert effective
+service sauQcomWifiObjsTriggerFwAssert /system/bin/init.oppo.wifi.AutoUpload.sh sauWifiObjsTriggerFwAssert "qcom"
+    class main
+    user system
+    group root system misc wifi
+    disabled
+    oneshot
+#endif /* VENDOR_EDIT */
+#================================connectivity wifi related end==========================================
+
+#================================connectivity bt related start==========================================
+#open bt core dump
+on property:vendor.connsys.bt.dump.status=1
+    start collectBTCoredumpLog
+
+#collectBTCoredumpLog service start kernel log collect and zip file to DCS path
+service collectBTCoredumpLog /vendor/bin/sh /vendor/bin/init.oppo.bt.debug.sh "collectBTCoredumpLog"
+    class main
+    user root
+    seclabel u:r:rutilsdaemon:s0
+    disabled
+    oneshot
+#================================connectivity bt related end ===========================================

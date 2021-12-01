@@ -1,0 +1,48 @@
+mkdir /data/misc/sensors 0664 system system
+
+service msensord /system/bin/msensord
+    user system
+    group system
+    oneshot
+
+service akmd8963 /system/bin/akmd8963
+    disabled
+    user system
+    group system
+
+
+on post-fs
+    # disable HPS
+    write /proc/hps/enabled 0
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+
+    # ifdef VENDOR_EDIT //yixue.ge@bsp.drv modify for make ftm perf issue
+    write /proc/ppm/policy/ut_fix_freq_idx "0 0"
+    write /proc/ppm/policy/ut_fix_core_num "0 4"
+    write /proc/gpufreq/gpufreq_opp_freq 695000
+    # endif
+
+    # disable cpuidle
+    write /proc/cpuidle/enable 0
+
+on boot
+
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    oneshot
+
+on property:sys.usb.config=gs1gs3
+      write /sys/class/android_usb/android0/enable 0
+      write /sys/class/android_usb/android0/idVendor ${sys.usb.vid}
+      write /sys/class/android_usb/android0/idProduct 2029
+      write /sys/class/android_usb/android0/f_acm/port_index 2,4
+      write /sys/devices/platform/mt_usb/saving 1
+      write /sys/class/android_usb/android0/functions mass_storage,adb,acm
+      write /sys/class/android_usb/android0/enable 1
+      start adbd
+      setprop sys.usb.state ${sys.usb.config}
+      setprop sys.usb.acm_idx 2,4
+

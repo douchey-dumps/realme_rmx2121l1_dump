@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wifisar>
+    <project name="20660">
+        <region name="EUEX">0</region>
+        <region name="ALL">12</region>
+        <region name="IN">24</region>
+    </project>
+    <project name="20602">
+        <region name="IN">0</region>
+    </project>
+</wifisar>

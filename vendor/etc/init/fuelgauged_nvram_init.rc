@@ -1,0 +1,9 @@
+#ifdef VENDOR_EDIT
+#/*LiYue@BSP.CHG.Basic, 2019/09/17, remove platform fuelgauge*/
+#service fuelgauged_nvram /vendor/bin/fuelgauged_nvram
+#    class main
+#    user system
+#    group system
+#    disabled
+#    oneshot
+#endif

@@ -1,0 +1,3 @@
+on post-fs-data
+    chmod 0660 /dev/st54spi
+    chown secure_element secure_element /dev/st54spi

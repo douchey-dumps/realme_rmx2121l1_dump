@@ -1,0 +1,8 @@
+#ifdef VENDOR_EDIT
+#/*LiYue@BSP.CHG.Basic, 2019/09/17, remove platform fuelgauge*/ 
+#service fuelgauged /vendor/bin/fuelgauged
+#    class core
+#    user system
+#    group system
+#    disabled
+#endif
