@@ -1,0 +1,36 @@
+
+<permissions>
+    <feature name="oppo.feature.20660" />
+    <feature name="oppo.eyeprotect.support" />
+    <!-- <!-\-<feature name="oppo.autolight.userotate.support" />-\-> -->
+    <!-- <feature name="oppo.appautoresolution.support" /> -->
+    <feature name="oppo.multibits.dimming.support" />
+    <feature name="oppo.autobrightctl.animation.support" />
+    <feature name="oppo.aod.support" />
+    <!-- liwei.a@PSW.MM.DisplayDriver.AOD, 2019/11/22, Add for ramless aod -->
+    <!--feature name="oppo.aod.ramless.support" /-->
+    <feature name="oppo.display.screen.gloablehbm.support" />
+    <!--feature name="oppo.display.screen.underlightsensor.support" / -->
+    <feature name="oppo.display.dcbacklight.support" />
+    <feature name="oppo.high.brightness.support" />
+    <!-- <!-\-<feature name="oppo.hardware.fingerprint.optical.support" />-\-> -->
+    <!--feature name="oppo.aod.transparent" /  -->
+    <!--feature name="oppo.roundcorner.support" /-->
+    <feature name="com.oppo.feature.screen.heteromorphism" />
+    <feature name="oppo.autolight.psensor.notsupport" />
+    <!-- caobing@Swdp.Shanghai, 2019/02/05, Add for ovs smartmic support on 20660 -->
+    <feature name="oppo.ovs.smartmic.support" />
+    <!-- caobing@Swdp.Shanghai, 2019/03/29, Add for ovs three wakeup words support on 20660-->
+    <feature name="oppo.breeno.three.words.support" />
+    <feature name="oppo.appautoresolution.support" />
+    <feature name="oppo.brightness.mode.automatic" />
+    <feature name="oppo.display.screen.defaultsmartmode" />
+    <feature name="oppo.display.screen.120hz.support" />
+    <feature name="oppo.multi.device.decrease.refresh.rate" />
+    <!-- Chenyang.Zhang@RM.MM.AuioServer.Policy, 2020/01/20, Add for remove DHP feature in call status -->
+    <feature name="realme.multimedia.dualheadphone.lite"/>
+    <!-- Jinzhu.Han@Display.Service.Feature, 2020/04/09, Add this for exponential brightness mode -->
+    <feature name="oppo.exponential.brightness.mode" />
+    <feature name="oppo.multimedia.dolby.sdk3.5.6.support" />
+    <feature name="oppo.display.set.dimlayer.alpha" />
+</permissions>

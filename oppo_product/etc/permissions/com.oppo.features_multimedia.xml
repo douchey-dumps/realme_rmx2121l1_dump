@@ -1,0 +1,9 @@
+<!-- This file is used by Multimedia Daemon Service (YaJun.li).  DO NOT MODIFY. -->
+<permissions>
+    <feature name="oppo.multimedia.record.conflict" />
+    <!-- Chenyang.Zhang@RM.MM.AuioServer.Policy, 2019/12/03, Add for DualHeadPhone -->
+    <feature name="realme.multimedia.dualheadphone"/>
+    <feature name="realme.multimedia.dualheadphone.lite"/>
+    <!-- Huade.zhou@RM.MM.AuioServer.Policy, 2019/12/03, Add for internal record -->
+    <feature name="oppo.multimedia.internal.record" />
+</permissions>

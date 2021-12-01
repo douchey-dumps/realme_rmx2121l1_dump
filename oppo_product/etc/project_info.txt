@@ -1,0 +1,2 @@
+/proc/oppoVersion/prjVersion,/proc/oppoVersion/operatorName,project
+20660,97,20660

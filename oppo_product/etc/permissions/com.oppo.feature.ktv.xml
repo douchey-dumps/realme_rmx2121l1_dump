@@ -1,0 +1,5 @@
+<!-- This file is used by audioloopback -->
+<permissions>
+    <feature name="oppo.karaoke_v2.support" />
+    <feature name="oppo.karaoke_v2.pitchchange" />
+</permissions>
